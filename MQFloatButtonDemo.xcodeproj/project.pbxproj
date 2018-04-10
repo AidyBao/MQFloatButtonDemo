@@ -13,6 +13,7 @@
 		7AD2F2D6207C903300092FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD2F2D5207C903300092FBE /* Assets.xcassets */; };
 		7AD2F2D9207C903300092FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD2F2D7207C903300092FBE /* LaunchScreen.storyboard */; };
 		7AD2F2DC207C903300092FBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2F2DB207C903300092FBE /* main.m */; };
+		7AD2F2E4207C90A300092FBE /* MQFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2F2E3207C90A300092FBE /* MQFloatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		7AD2F2D8207C903300092FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AD2F2DA207C903300092FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD2F2DB207C903300092FBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7AD2F2E2207C90A300092FBE /* MQFloatButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MQFloatButton.h; sourceTree = "<group>"; };
+		7AD2F2E3207C90A300092FBE /* MQFloatButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MQFloatButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				7AD2F2CD207C903200092FBE /* AppDelegate.m */,
 				7AD2F2CF207C903200092FBE /* ViewController.h */,
 				7AD2F2D0207C903200092FBE /* ViewController.m */,
+				7AD2F2E2207C90A300092FBE /* MQFloatButton.h */,
+				7AD2F2E3207C90A300092FBE /* MQFloatButton.m */,
 				7AD2F2D2207C903200092FBE /* Main.storyboard */,
 				7AD2F2D5207C903300092FBE /* Assets.xcassets */,
 				7AD2F2D7207C903300092FBE /* LaunchScreen.storyboard */,
@@ -143,6 +148,7 @@
 			files = (
 				7AD2F2D1207C903200092FBE /* ViewController.m in Sources */,
 				7AD2F2DC207C903300092FBE /* main.m in Sources */,
+				7AD2F2E4207C90A300092FBE /* MQFloatButton.m in Sources */,
 				7AD2F2CE207C903200092FBE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

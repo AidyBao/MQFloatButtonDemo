@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "MQFloatButton.h"
+#import "ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,10 +19,44 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ViewController *vc = [[ViewController alloc]init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = navi;
+    [self.window makeKeyAndVisible];
+    
+    //延迟加载VersionBtn - 避免wimdow还没出现就往上加控件造成的crash
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setVersionBtn];
+    });
+    
     return YES;
 }
 
+-(void)setVersionBtn
+{
+    CGFloat touchW = 120;
+    CGFloat touchX = 375 - touchW;
+    CGFloat touchY = 43;
+    CGFloat touchH = 49;
+    
+    NSString *versionStr = [[[NSBundle
+                              mainBundle]infoDictionary]valueForKey:@"CFBundleShortVersionString"];
+    NSString *buildStr = [[[NSBundle
+                            mainBundle]infoDictionary]valueForKey:@"CFBundleVersion"];
+    
+    NSString *title = [NSString stringWithFormat:@"Ver:%@ 测试\nBuild:%@",versionStr,buildStr];
+    CGRect frame = CGRectMake(touchX, touchY, touchW, touchH);
+    
+    //基础控件 - 没有任何属性
+    //MNAssistiveBtn *btn = [MNAssistiveBtn mn_touchWithFrame:frame];
+    
+    //示例demo样式
+    MQFloatButton *btn = [MQFloatButton mn_touchWithType:MQAssistiveTouchTypeNone Frame:frame
+                                                     title:title titleColor:[UIColor whiteColor] titleFont:[UIFont systemFontOfSize:11] backgroundColor:[UIColor blackColor] backgroundImage:[UIImage imageNamed:@"test"]];
+    [self.window addSubview:btn];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
